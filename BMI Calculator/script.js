@@ -3,8 +3,8 @@ function handleGetFormData(){
     const weight = document.getElementById('weight').value;
 
     const inputData = {
-        height : height,
-        weight : weight
+        height : Number(height),
+        weight : Number(weight)
     };
 
     return inputData;
@@ -12,7 +12,12 @@ function handleGetFormData(){
 
 function calculateBmi(){
     const inputUser = handleGetFormData();
+
+    console.log(inputUser);
+
     return Math.round(inputUser.weight / ((inputUser.height / 100) ** 2));
+    
+
 }
 
 function showResult(){
